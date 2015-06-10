@@ -13,7 +13,7 @@ import (
 
 type MonitorSample struct {
 	Name     string  `json:"name"`
-	CpuPct   float64 `json:"cpu_percent"`
+	CpuPct   float64 `json:"cpu_percent,omitempty"`
 	MemUsed  uint64  `json:"mem_used"`
 	MemTotal uint64  `json:"mem_total"`
 }
@@ -26,7 +26,7 @@ func getSystemMonitorSample() MonitorSample {
 	memSample := systemstat.GetMemSample()
 
 	var stat MonitorSample
-	stat.Name = "System"
+	stat.Name = "system"
 	stat.CpuPct = (total - idle) * 100.0 / total
 	stat.MemTotal = memSample.MemTotal
 	stat.MemUsed = memSample.MemUsed
@@ -41,13 +41,12 @@ func getContainerMonitorSample(name string) (MonitorSample, error) {
 		errC <- client.Stats(docker.StatsOptions{name, dockerStats})
 		close(errC)
 	}()
+
 	statsResult, ok := <-dockerStats
 	if !ok {
 		return stat, <-errC
 	}
-	fmt.Printf("%+v", statsResult)
 	stat.Name = name
-	stat.CpuPct = float64(statsResult.CPUStats.CPUUsage.TotalUsage)
 	stat.MemTotal = statsResult.MemoryStats.Limit
 	stat.MemUsed = statsResult.MemoryStats.Usage
 	return stat, nil
