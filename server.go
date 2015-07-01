@@ -38,7 +38,7 @@ func getContainerMonitorSample(name string) (MonitorSample, error) {
 	dockerStats := make(chan *docker.Stats)
 	errC := make(chan error, 1)
 	go func() {
-		errC <- client.Stats(docker.StatsOptions{name, dockerStats, false})
+		errC <- client.Stats(docker.StatsOptions{name, dockerStats, false, false})
 		close(errC)
 	}()
 
