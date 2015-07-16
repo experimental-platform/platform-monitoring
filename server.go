@@ -9,6 +9,7 @@ import (
 	"github.com/go-martini/martini"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 type MonitorSample struct {
@@ -39,7 +40,7 @@ func getContainerMonitorSample(name string) (MonitorSample, error) {
 	errC := make(chan error, 1)
 	stopOperation := make(chan bool)
 	go func() {
-		errC <- client.Stats(docker.StatsOptions{name, dockerStats, false, stopOperation})
+		errC <- client.Stats(docker.StatsOptions{name, dockerStats, false, stopOperation, time.Minute})
 		close(errC)
 	}()
 
