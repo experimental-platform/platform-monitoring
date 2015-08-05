@@ -1,7 +1,5 @@
-FROM experimentalplatform/ubuntu:latest
+FROM golang:onbuild
 
-COPY monitoring /monitoring
-
-CMD ["/monitoring", "--port", "80"]
+CMD ["/go/bin/app", "--port", "80"]
 
 EXPOSE 80
