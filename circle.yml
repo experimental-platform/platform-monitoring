@@ -25,7 +25,7 @@ deployment:
     branch: /.*/
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker -D push experimentalplatform/app-monitoring:$CIRCLE_BRANCH
+      - docker push experimentalplatform/app-monitoring:$CIRCLE_BRANCH
       - >
         curl
         --header "Content-Type: application/json"
