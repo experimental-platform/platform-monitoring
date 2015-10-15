@@ -1,6 +1,6 @@
 FROM experimentalplatform/ubuntu:latest
 
-COPY monitoring /monitoring
+COPY platform-monitoring /monitoring
 
 CMD ["/monitoring", "--port", "80"]
 
