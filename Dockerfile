@@ -1,4 +1,4 @@
-FROM scratch
+FROM experimentalplatform/ubuntu:latest
 
 COPY platform-monitoring /monitoring
 
