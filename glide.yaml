@@ -1,0 +1,14 @@
+package: main
+import:
+  - package: github.com/codegangsta/inject
+    ref: v1.0-rc1
+  - package: github.com/codegangsta/martini-contrib
+    ref: 8ce6181c2609699e4c7cd30994b76a850a9cdadc
+  - package: github.com/go-martini/martini
+    ref: 9987fc59f060a063247d22472c2fb48654bac5f6
+  - package: github.com/codegangsta/martini
+    ref: 9987fc59f060a063247d22472c2fb48654bac5f6
+  - package: github.com/fsouza/go-dockerclient
+    ref: 09604abc82243886001c3f56fd709d4ba603cead
+  - package: bitbucket.org/bertimus9/systemstat
+    ref: 1468fd0db20598383c9393cccaa547de6ad99e5e
