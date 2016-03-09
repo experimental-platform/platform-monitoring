@@ -1,9 +1,7 @@
-language: go
-go: 1.5
 sudo: required
 services:
-  - docker
+    - docker
 install:
-  - ./ci-build.sh
+    - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/go-build.sh | bash
 script:
-  - ./buildimg.sh
+    - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/buildimg.sh | bash
