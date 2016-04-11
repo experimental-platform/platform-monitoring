@@ -2,7 +2,7 @@
 set -e
 
 SRC_PATH=$(pwd)
-PROJECT_NAME="github.com/$TRAVIS_REPO_SLUG"
+PROJECT_NAME="github.com/platform-monitoring"
 
 export GO15VENDOREXPERIMENT=1
 curl -L https://raw.githubusercontent.com/experimental-platform/misc/master/install-glide.sh | sh
