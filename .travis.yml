@@ -1,7 +1,7 @@
-sudo: required
+sudo: false
 services:
     - docker
 install:
-    - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/go-build.sh | bash
+    - ./ci-build.sh
 script:
     - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/buildimg.sh | bash
