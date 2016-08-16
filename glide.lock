@@ -1,0 +1,34 @@
+hash: 9665bf15e14524c556637229904c7719cc64d2672bedbbbb6cac4a2e08cb9e1e
+updated: 2016-08-16T15:35:15.115750043+02:00
+imports:
+- name: bitbucket.org/bertimus9/systemstat
+  version: 1468fd0db20598383c9393cccaa547de6ad99e5e
+- name: github.com/codegangsta/inject
+  version: 37d7f8432a3e684eef9b2edece76bdfa6ac85b39
+- name: github.com/codegangsta/martini
+  version: 9987fc59f060a063247d22472c2fb48654bac5f6
+- name: github.com/codegangsta/martini-contrib
+  version: 8ce6181c2609699e4c7cd30994b76a850a9cdadc
+  subpackages:
+  - render
+- name: github.com/fsouza/go-dockerclient
+  version: 09604abc82243886001c3f56fd709d4ba603cead
+  subpackages:
+  - external/github.com/docker/docker/opts
+  - external/github.com/docker/docker/pkg/archive
+  - external/github.com/docker/docker/pkg/fileutils
+  - external/github.com/docker/docker/pkg/homedir
+  - external/github.com/docker/docker/pkg/stdcopy
+  - external/github.com/docker/docker/pkg/parsers
+  - external/github.com/docker/docker/pkg/ulimit
+  - external/github.com/docker/docker/volume
+  - external/github.com/Sirupsen/logrus
+  - external/github.com/docker/docker/pkg/pools
+  - external/github.com/docker/docker/pkg/promise
+  - external/github.com/docker/docker/pkg/system
+  - external/github.com/opencontainers/runc/libcontainer/user
+  - external/github.com/docker/docker/pkg/ioutils
+  - external/github.com/docker/docker/pkg/units
+- name: github.com/go-martini/martini
+  version: 9987fc59f060a063247d22472c2fb48654bac5f6
+testImports: []
